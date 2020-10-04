@@ -15,7 +15,7 @@ namespace ConsoleChess.ChessPieces
             // Check whether the given coordinates are inside the chess playing field
             if (MovesBeyondBoard(xTo, yTo))
             {
-                return (false, "This position beyond the chess playing field");
+                return (false, "This position is beyond the chess playing field");
             }
 
             var xOk = xTo - 1 == X || xTo + 1 == X || xTo == X;
