@@ -65,7 +65,15 @@ namespace ConsoleChess
                 return (false, errorMessage);
             }
 
-            // All checks succeeded, return true.
+            // All checks succeeded
+            // If on exists, remove the chess piece currently at the position the moving piece moves to
+            var take = (
+                from pcs in _chessPieces
+                where pcs.X == xTo && pcs.Y == yTo
+                select pcs
+            ).First();
+            _chessPieces.Remove(take);
+            
             return (true, null);
         }
 
