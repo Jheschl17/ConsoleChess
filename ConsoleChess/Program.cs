@@ -9,7 +9,7 @@ namespace ConsoleChess
 {
     internal class Program
     {
-        private const string USER_INPUT_PATTERN = "[a-h][1-8]-[a-h][1-8]";
+        private const string UserInputPattern = "[a-h][1-8]-[a-h][1-8]";
         
         public static void Main(string[] args)
         {
@@ -29,7 +29,7 @@ namespace ConsoleChess
                     var userInput = Console.ReadLine();
                     
                     // If user input is invalid, restart the turn procedure
-                    if (!Regex.IsMatch(userInput, USER_INPUT_PATTERN))
+                    if (!Regex.IsMatch(userInput, UserInputPattern))
                     {
                         ShowError("Invalid position, enter your move in the format coordinateFrom-coordinateTo");
                         goto Turn; // I'm sorry
