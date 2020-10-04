@@ -10,9 +10,6 @@ namespace ConsoleChess.ChessPieces
             return (true, null);
         }
 
-        public override string Unicode()
-        {
-            return "♙";
-        }
+        public override string Unicode() => "♙";
     }
 }
