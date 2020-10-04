@@ -112,5 +112,22 @@ namespace ConsoleChess.ChessPieces
             return moveToPosition?.Colour == this.Colour;
         }
 
+        /// <summary>
+        /// Checks whether the given position is inside the bounds of the playing field.
+        /// </summary>
+        /// <param name="xTo">
+        /// The x (horizontal) position to move to, where 0 is the very left. X rises as pieces go right on the board
+        /// </param>
+        /// <param name="yTo">
+        /// The y (vertical) position to move to, where 0 is the very bottom. Y rises as pieces go up on the board
+        /// </param>
+        /// <returns>
+        /// True if the given coordinates are outside the bounds of the chess playing field, false otherwise.
+        /// </returns>
+        protected bool MovesBeyondBoard(int xTo, int yTo)
+        {
+            return xTo >= 0 && yTo >= 0 &&
+                   xTo <= 7 && yTo <= 7;
+        }
     }
 }
