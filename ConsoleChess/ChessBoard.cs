@@ -144,7 +144,7 @@ namespace ConsoleChess
         /// the board.
         /// </param>
         /// <param name="y">
-        /// The y (horizontal) position, where 0 is the very left. X rises as pieces go right on
+        /// The y (horizontal) position, where 0 is the very left. Y rises as pieces go up on
         /// the board.
         /// </param>
         /// <returns>The cursor position required to overwrite the chess piece the given position.</returns>
