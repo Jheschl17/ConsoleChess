@@ -50,10 +50,7 @@ namespace ConsoleChess.ChessPieces
         /// </returns>
         public abstract string Unicode();
 
-        protected bool Equals(ChessPiece other)
-        {
-            return Colour == other.Colour && X == other.X && Y == other.Y;
-        }
+        protected bool Equals(ChessPiece other) => Colour == other.Colour && X == other.X && Y == other.Y;
 
         public override bool Equals(object obj)
         {
@@ -85,10 +82,7 @@ namespace ConsoleChess.ChessPieces
         /// The y (vertical) position to move to, where 0 is the very bottom. Y rises as pieces go up on the board
         /// </param>
         /// <returns>Whether or not the chess piece changes position, were it to move to the given coordinates</returns>
-        protected bool IsMoving(int xTo, int yTo)
-        {
-            return !(this.X == xTo && this.Y == yTo);
-        }
+        protected bool IsMoving(int xTo, int yTo) => !(this.X == xTo && this.Y == yTo);
 
         /// <summary>
         /// Checks whether there is a friendly chess piece at the given position.
@@ -124,10 +118,8 @@ namespace ConsoleChess.ChessPieces
         /// <returns>
         /// True if the given coordinates are outside the bounds of the chess playing field, false otherwise.
         /// </returns>
-        protected bool MovesBeyondBoard(int xTo, int yTo)
-        {
-            return xTo >= 0 && yTo >= 0 &&
-                   xTo <= 7 && yTo <= 7;
-        }
+        protected bool MovesBeyondBoard(int xTo, int yTo) =>
+            xTo >= 0 && yTo >= 0 &&
+            xTo <= 7 && yTo <= 7;
     }
 }
