@@ -26,7 +26,7 @@ namespace ConsoleChess.ChessPieces
             }
             
             // Checks whether the given coordinates are blocked by a friendly piece
-            if (!MovesOntoFriendly(xTo, yTo, pieces))
+            if (MovesOntoFriendly(xTo, yTo, pieces))
             {
                 return (false, "A friendly piece is at that position");
             }
