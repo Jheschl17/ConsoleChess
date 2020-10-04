@@ -119,7 +119,7 @@ namespace ConsoleChess.ChessPieces
         /// True if the given coordinates are outside the bounds of the chess playing field, false otherwise.
         /// </returns>
         protected static bool MovesBeyondBoard(int xTo, int yTo) =>
-            xTo >= 0 && yTo >= 0 &&
-            xTo <= 7 && yTo <= 7;
+            !(xTo >= 0 && yTo >= 0 &&
+              xTo <= 7 && yTo <= 7);
     }
 }
