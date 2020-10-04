@@ -22,7 +22,7 @@ namespace ConsoleChess
             _chessPieces.Add(new Knight {Colour = ChessColour.White, X = 6, Y = 0});
             _chessPieces.Add(new Rook {Colour = ChessColour.White, X = 7, Y = 0});
             // White pawns
-            foreach (var i in Enumerable.Range(0, 7))
+            foreach (var i in Enumerable.Range(0, 8))
             {
                 _chessPieces.Add(new Pawn {Colour = ChessColour.White, X = i, Y = 1});
             }
@@ -37,7 +37,7 @@ namespace ConsoleChess
             _chessPieces.Add(new Knight {Colour = ChessColour.Black, X = 6, Y = 7});
             _chessPieces.Add(new Rook {Colour = ChessColour.Black, X = 7, Y = 7});
             // Black pawns
-            foreach (var i in Enumerable.Range(0, 7))
+            foreach (var i in Enumerable.Range(0, 8))
             {
                 _chessPieces.Add(new Pawn {Colour = ChessColour.Black, X = i, Y = 6});
             }
@@ -49,7 +49,7 @@ namespace ConsoleChess
                 from pcs in _chessPieces
                 where pcs.X == xFrom && pcs.Y == yFrom
                 select pcs
-            ).GetEnumerator().Current;
+            ).First();
 
             // If no piece could be found on the given position (xFrom, yFrom), return false.
             if (piece == null)
@@ -71,23 +71,89 @@ namespace ConsoleChess
 
         /// <summary>
         /// Print the current state of the board to the console. This method will overwrite the current state of the
-        /// console by setting the cursor position.
+        /// console.
         /// </summary>
         public void Draw()
         {
+            Console.Clear();
             DrawEmpty();
-            drawPieces();
+            DrawPieces();
         }
 
         /// <summary>
         /// Draw chess pieces from list _chessPieces by  overwriting characters in terminal using
         /// Console.SetCursorPosition.
         /// </summary>
-        private void drawPieces()
+        private void DrawPieces()
         {
-            throw new NotImplementedException();
+            var currentLeft = Console.CursorLeft;
+            var currentTop = Console.CursorTop;
+            var currentBackground = Console.BackgroundColor;
+            var currentForeground = Console.ForegroundColor;
+
+            Console.BackgroundColor = ConsoleColor.Gray;
+            foreach (var piece in _chessPieces)
+            {
+                var (cursorLeft, cursorTop) = ConsolePosition(piece.X, piece.Y);
+                Console.SetCursorPosition(cursorLeft, cursorTop);
+                // Set console foreground colour according the colour of the current piece
+                switch (piece.Colour)
+                {
+                    case ChessColour.Black:
+                        Console.ForegroundColor = ConsoleColor.Black;
+                        break;
+                    case ChessColour.White:
+                        Console.ForegroundColor = ConsoleColor.White;
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException();
+                }
+                Console.Write(piece.Unicode());
+            }
+            
+            // Reset cursor position, background colour and foreground colour to pre method invocation
+            Console.SetCursorPosition(currentLeft, currentTop);
+            Console.BackgroundColor = currentBackground;
+            Console.ForegroundColor = currentForeground;
         }
 
+        /// <summary>
+        /// Translates the board position of a chess piece (for instance x = 0, y = 2) to the cursor position required
+        /// to overwrite the chess pieces representation on the console.
+        /// </summary>
+        /// <param name="x">
+        /// The x (horizontal) position, where 0 is the very left. X rises as pieces go right on
+        /// the board.
+        /// </param>
+        /// <param name="y">
+        /// The y (horizontal) position, where 0 is the very left. X rises as pieces go right on
+        /// the board.
+        /// </param>
+        /// <returns>The cursor position required to overwrite the chess piece the given position.</returns>
+        private static (int cursorLeft, int cursorTop) ConsolePosition(int x, int y)
+        {
+            // The width in characters of a column
+            const int columnSize = 5;
+            // The amount of characters the end a column is off to the right from its center
+            const int columnCenterOffset = 3;
+            // The width in characters of the row indicator (1, 2, 3, 4, ... on the left side)
+            const int rowIndicatorSize = 1;
+
+            // The column position of the cursor
+            var cursorLeft = rowIndicatorSize + (x + 1) * columnSize - columnCenterOffset;
+
+
+            // The number of actual rows on the chess board, not number of rows displayed in the console
+            const int rowAmount = 8;
+            // The number of rows displayed on the console per actual chess board row
+            const int consoleRowHeight = 2;
+            
+            // The row position of the cursor
+            var cursorTop = (rowAmount - y) * consoleRowHeight - 1;
+
+            return (cursorLeft, cursorTop);
+        }
+        
         /// <summary>
         /// Print an empty chess board to the console.
         /// </summary>
