@@ -49,7 +49,7 @@ namespace ConsoleChess
                 from pcs in _chessPieces
                 where pcs.X == xFrom && pcs.Y == yFrom
                 select pcs
-            ).First();
+            ).FirstOrDefault();
 
             // If no piece could be found on the given position (xFrom, yFrom), return false.
             if (piece == null)
@@ -76,7 +76,7 @@ namespace ConsoleChess
                 from pcs in _chessPieces
                 where pcs.X == xTo && pcs.Y == yTo
                 select pcs
-            ).First();
+            ).FirstOrDefault();
             _chessPieces.Remove(take);
 
             return (true, null);
