@@ -8,5 +8,10 @@ namespace ConsoleChess.ChessPieces
         {
             throw new System.NotImplementedException();
         }
+
+        public override string Unicode()
+        {
+            return "♖";
+        }
     }
 }

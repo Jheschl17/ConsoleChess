@@ -4,8 +4,6 @@ namespace ConsoleChess.ChessPieces
 {
     public abstract class ChessPiece
     {
-        public string Unicode { get; protected set; }
-
         public ChessColour Colour { get; set; }
 
         public int X { get; set; }
@@ -14,5 +12,7 @@ namespace ConsoleChess.ChessPieces
 
 
         public abstract (bool canMove, string errorMessage) CanMove(int xTo, int yTo, List<ChessPiece> pieces);
+
+        public abstract string Unicode();
     }
 }
