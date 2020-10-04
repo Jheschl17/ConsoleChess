@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.NetworkInformation;
 using ConsoleChess.ChessPieces;
 
 namespace ConsoleChess
@@ -78,6 +79,10 @@ namespace ConsoleChess
                 select pcs
             ).FirstOrDefault();
             _chessPieces.Remove(take);
+
+            // Update position of moving piece
+            piece.X = xTo;
+            piece.Y = yTo;
 
             return (true, null);
         }
