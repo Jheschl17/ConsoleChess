@@ -44,14 +44,14 @@ namespace ConsoleChess
         public void Draw()
         {
             DrawEmpty();
-            DrawPieces();
+            drawPieces();
         }
 
         /// <summary>
         /// Draw chess pieces from list _chessPieces by  overwriting characters in terminal using
         /// Console.SetCursorPosition.
         /// </summary>
-        private static void DrawPieces()
+        private void drawPieces()
         {
             throw new NotImplementedException();
         }
