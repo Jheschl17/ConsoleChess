@@ -69,6 +69,10 @@ namespace ConsoleChess
             return (true, null);
         }
 
+        /// <summary>
+        /// Print the current state of the board to the console. This method will overwrite the current state of the
+        /// console by setting the cursor position.
+        /// </summary>
         public void Draw()
         {
             DrawEmpty();
@@ -84,6 +88,9 @@ namespace ConsoleChess
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Print an empty chess board to the console.
+        /// </summary>
         private static void DrawEmpty()
         {
             Console.ForegroundColor = ConsoleColor.Black;
