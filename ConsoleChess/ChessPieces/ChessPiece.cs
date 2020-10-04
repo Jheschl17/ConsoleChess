@@ -4,7 +4,7 @@ namespace ConsoleChess.ChessPieces
 {
     public abstract class ChessPiece
     {
-        public string Unicode { get; set; }
+        public string Unicode { get; protected set; }
 
         public ChessColour Colour { get; set; }
 

@@ -11,7 +11,7 @@ namespace ConsoleChess
 
         public ChessBoard()
         {
-            _chessPieces.Add(new Rook(){Unicode = "Rook", Colour = ChessColour.Black, X = 0, Y = 0});
+            _chessPieces.Add(new Rook(){Colour = ChessColour.Black, X = 0, Y = 0});
             // TODO add all chess pieces
         }
 

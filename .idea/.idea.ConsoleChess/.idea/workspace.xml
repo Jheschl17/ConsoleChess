@@ -9,20 +9,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="90ab473c-f592-4400-a8f0-6b44691c9f5c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleChess.sln" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleChess/ChessBoard.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleChess/ChessPieces/Bishop.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleChess/ChessPieces/ChessColour.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleChess/ChessPieces/ChessPiece.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleChess/ChessPieces/King.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleChess/ChessPieces/Knight.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleChess/ChessPieces/Pawn.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleChess/ChessPieces/Queen.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleChess/ChessPieces/Rook.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleChess/ConsoleChess.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleChess/Program.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ConsoleChess/Properties/AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ConsoleChess/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ConsoleChess/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ConsoleChess/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ConsoleChess/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleChess/ChessBoard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleChess/ChessBoard.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleChess/ChessPieces/ChessPiece.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleChess/ChessPieces/ChessPiece.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +36,7 @@
         <option value="$PROJECT_DIR$/ConsoleChess/ChessPieces/Rook.cs" />
         <option value="$PROJECT_DIR$/ConsoleChess/ChessPieces/ChessPiece.cs" />
         <option value="$PROJECT_DIR$/ConsoleChess/ChessBoard.cs" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -59,7 +51,7 @@
     <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.3000703" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="terminal" />
+    <property name="settings.editor.selected.configurable" value="com.maddyhome.idea.vim.ui.VimEmulationConfigurable" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
@@ -94,6 +86,9 @@
       <workItem from="1601297346532" duration="8963000" />
       <workItem from="1601458387721" duration="293000" />
       <workItem from="1601461797870" duration="521000" />
+      <workItem from="1601814987901" duration="802000" />
+      <workItem from="1601815804893" duration="112000" />
+      <workItem from="1601815937571" duration="91000" />
     </task>
     <servers />
   </component>
@@ -190,10 +185,15 @@
       <screen x="0" y="0" width="1500" height="953" />
     </state>
     <state width="1454" height="329" key="GridCell.Tab.3.right/0.0.1500.953@0.0.1500.953" timestamp="1601303119256" />
-    <state x="239" y="-30" width="1001" height="766" key="SettingsEditor" timestamp="1601299208404">
-      <screen x="0" y="0" width="1500" height="953" />
+    <state x="1386" y="0" width="1001" height="766" key="SettingsEditor" timestamp="1601815913958">
+      <screen x="1080" y="0" width="1920" height="1080" />
     </state>
     <state x="239" y="-30" width="1001" height="766" key="SettingsEditor/0.0.1500.953@0.0.1500.953" timestamp="1601299208404" />
+    <state x="1386" y="0" key="SettingsEditor/1080.0.1920.1080/0.0.1080.1920@1080.0.1920.1080" timestamp="1601815913958" />
+    <state x="1636" y="257" key="Vcs.Push.Dialog.v2" timestamp="1601815272496">
+      <screen x="1080" y="0" width="1920" height="1080" />
+    </state>
+    <state x="1636" y="257" key="Vcs.Push.Dialog.v2/1080.0.1920.1080/0.0.1080.1920@1080.0.1920.1080" timestamp="1601815272496" />
     <state x="413" y="186" width="672" height="678" key="search.everywhere.popup" timestamp="1601462187472">
       <screen x="0" y="0" width="1500" height="953" />
     </state>
