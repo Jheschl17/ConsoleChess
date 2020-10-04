@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Xml;
 
@@ -88,5 +89,28 @@ namespace ConsoleChess.ChessPieces
         {
             return !(this.X == xTo && this.Y == yTo);
         }
+
+        /// <summary>
+        /// Checks whether there is a friendly chess piece at the given position.
+        /// </summary>
+        /// <param name="xTo">
+        /// The x (horizontal) position to move to, where 0 is the very left. X rises as pieces go right on the board
+        /// </param>
+        /// <param name="yTo">
+        /// The y (vertical) position to move to, where 0 is the very bottom. Y rises as pieces go up on the board
+        /// </param>
+        /// <param name="board">The list of chess pieces currently on the board.</param>
+        /// <returns>Whether or not moving there is a friendly chess piece at the given position.</returns>
+        protected bool MovesOntoFriendly(int xTo, int yTo, List<ChessPiece> board)
+        {
+            var moveToPosition = (
+                from pcs in board
+                where pcs.X == xTo && pcs.Y == yTo
+                select pcs
+            ).FirstOrDefault();
+            
+            return moveToPosition?.Colour == this.Colour;
+        }
+
     }
 }
