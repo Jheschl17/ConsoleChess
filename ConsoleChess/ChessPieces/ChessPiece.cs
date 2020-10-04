@@ -46,5 +46,29 @@ namespace ConsoleChess.ChessPieces
         /// The unicode character corresponding to this chess piece. This would, for instance, return "♗" for a bishop.
         /// </returns>
         public abstract string Unicode();
+
+        protected bool Equals(ChessPiece other)
+        {
+            return Colour == other.Colour && X == other.X && Y == other.Y;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            if (ReferenceEquals(this, obj)) return true;
+            if (obj.GetType() != this.GetType()) return false;
+            return Equals((ChessPiece) obj);
+        }
+
+        public override int GetHashCode()
+        {
+            unchecked
+            {
+                var hashCode = (int) Colour;
+                hashCode = (hashCode * 397) ^ X;
+                hashCode = (hashCode * 397) ^ Y;
+                return hashCode;
+            }
+        }
     }
 }
