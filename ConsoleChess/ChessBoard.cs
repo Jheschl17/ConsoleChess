@@ -43,7 +43,7 @@ namespace ConsoleChess
             }
         }
 
-        public (bool success, string errorMessage) Move(int xFrom, int yFrom, int xTo, int yTo)
+        public (bool success, string errorMessage) Move(ChessColour chessColour, int xFrom, int yFrom, int xTo, int yTo)
         {
             var piece = (
                 from pcs in _chessPieces
@@ -54,7 +54,12 @@ namespace ConsoleChess
             // If no piece could be found on the given position (xFrom, yFrom), return false.
             if (piece == null)
             {
-                return (false, "The given position is empty");
+                return (false, "This position is empty");
+            }
+
+            if (piece.Colour != chessColour)
+            {
+                return (false, "This piece is of the opposite colour");
             }
 
             var (canMove, errorMessage) = piece.CanMove(xTo, yTo, _chessPieces);
@@ -73,7 +78,7 @@ namespace ConsoleChess
                 select pcs
             ).First();
             _chessPieces.Remove(take);
-            
+
             return (true, null);
         }
 
