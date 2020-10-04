@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using System.Xml;
 
 namespace ConsoleChess.ChessPieces
 {
@@ -69,6 +71,21 @@ namespace ConsoleChess.ChessPieces
                 hashCode = (hashCode * 397) ^ Y;
                 return hashCode;
             }
+        }
+
+        /// <summary>
+        /// Determines whether or not the current chess piece actually changes its position, were it to move to the
+        /// given coordinates.
+        /// </summary>
+        /// <param name="xTo">
+        /// The x (horizontal) position to move to, where 0 is the very left. X rises as pieces go right on the board
+        /// <param name="yTo">
+        /// The y (vertical) position to move to, where 0 is the very bottom. Y rises as pieces go up on the board
+        /// </param>
+        /// <returns>Whether or not the chess piece changes position, were it to move to the given coordinates</returns>
+        protected bool isMoving(int xTo, int yTo)
+        {
+            return !(this.X == xTo && this.Y == yTo);
         }
     }
 }
